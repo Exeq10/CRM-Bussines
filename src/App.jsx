@@ -8,14 +8,20 @@ import {
 import Layout from "./components/Layout";
 
 import { Children } from "react";
-import NuevoCliente , {action as actionnewclient} from "./components/pages/NuevoCliente";
-import EditarCliente, {loader as updateLoader} from "./components/pages/EditarCliente";
-import EliminarCliente from "./components/pages/EliminarCliente";
 
-import Clientes ,{loader as clientLoader} from "./components/pages/Clientes";
+/* importacion del componente Nuevo cliente */
+import NuevoCliente, {
+  action as actionnewclient,
+} from "./components/pages/NuevoCliente";
+
+/* importacion del componente Nuevo cliente */
+import EditarCliente, {
+  loader as updateLoader,
+  action as actionEditClient,
+} from "./components/pages/EditarCliente";
+
+import Clientes, { loader as clientLoader } from "./components/pages/Clientes";
 import ErrorPage from "./components/ErrorPage";
-
-
 
 const router = createBrowserRouter([
   {
@@ -24,37 +30,27 @@ const router = createBrowserRouter([
 
     children: [
       {
-        index:true,
-        element :<Clientes />,
+        index: true,
+        element: <Clientes />,
 
-        loader:clientLoader,
-        errorElement:<ErrorPage/>
+        loader: clientLoader,
+        errorElement: <ErrorPage />,
       },
-
 
       {
         path: "/clientes/nuevo",
         element: <NuevoCliente />,
 
-        action:actionnewclient,
-        errorElement:<ErrorPage/>
-
-       
+        action: actionnewclient,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/clientes/editar/:id",
         element: <EditarCliente />,
-        errorElement:<ErrorPage/>,
-        loader : updateLoader,
-        
-
+        errorElement: <ErrorPage />,
+        loader: updateLoader,
+        action: actionEditClient,
       },
-      {
-        path: "/clientes/eliminar",
-        element: <EliminarCliente />,
-        errorElement:<ErrorPage/>
-      },
-      
     ],
   },
 ]);

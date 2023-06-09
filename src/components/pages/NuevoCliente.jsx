@@ -29,8 +29,6 @@ export async function action({ request }) {
     errores.push("Email no válido");
   }
 
-
-
   /* validación de campos vacíos  */
 
   if (Object.values(datos).includes("")) {
@@ -43,13 +41,9 @@ export async function action({ request }) {
     return errores;
   }
 
+  await postClient(datos);
 
-
-
-await postClient(datos)
-
-return redirect('/')
-
+  return redirect("/");
 }
 
 function NuevoCliente() {
@@ -82,8 +76,7 @@ function NuevoCliente() {
       <div className="w-3/4 bg-white mx-auto shadow-lg py-5 px-6">
         {errores?.length &&
           errores.map((err, i) => <Error key={i}>{err} </Error>)}
-        <Form method="POST"
-        >
+        <Form method="POST">
           <Formulario />
 
           <input

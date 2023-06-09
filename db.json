@@ -1,20 +1,12 @@
 {
   "clientes": [
     {
-      "nombre": "pepe",
-      "empresa": "pama",
+      "nombre": "pacnhososa",
+      "empresa": "dsadas",
       "email": "exelu1495@gmail.com",
       "telefono": "098587036",
-      "notas": "se la come",
+      "notas": "sadasdaad",
       "id": 1
-    },
-    {
-      "nombre": "javier",
-      "empresa": "masdma",
-      "email": "exelu1495@gmail.com",
-      "telefono": "098587036",
-      "notas": "aasaaaaaaaaaa",
-      "id": 2
     }
   ]
 }
